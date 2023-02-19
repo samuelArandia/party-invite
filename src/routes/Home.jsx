@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardContent, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { CardContent, Checkbox, FormControlLabel, TextareaAutosize, TextField } from '@mui/material';
 import { Container } from '@mui/system';
 import samuel from '../assets/samuel3.png';
 import samuel2 from '../assets/samuel2.png';
@@ -19,6 +19,10 @@ function Home() {
   };
 
   const [isCheckboxChecked, setIsCheckboxChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsCheckboxChecked(event.target.checked);
+  };
 
   const handleSubmit = async (event) => {
     
@@ -70,7 +74,7 @@ function Home() {
       >
         <div>
           <h2>¡ESTAS INVITADO A MI FIESTA DE CUMPLEAÑOS! </h2>
-          <h4>Cuándo: el viernes 3 de marzo del 2023</h4>
+          <h4>Cuándo: El viernes 3 de marzo del 2023</h4>
           <h4>Dónde:  Las Acacias 7604, La Florida. Salón gourmet</h4>
           <h4>Desde las 8:00 pm</h4>
         </div>
@@ -94,7 +98,24 @@ function Home() {
                 required
                 onChange={handleRutChange}
               />
-              <FormControlLabel control={<Checkbox/>} label="Con Acompañante?" />
+            <FormControlLabel
+              sx={{
+                color: '#000',
+              }}
+              control={<Checkbox 
+              onChange={handleCheckboxChange} 
+              name="acompanante"
+              />}
+            label="¡Con acompañante!"
+            />
+            {isCheckboxChecked && (
+              <TextareaAutosize
+                name="acompanante"
+                placeholder="Ingrese los datos de su acompañante o alguna observación"
+                minLength={4}
+                rowsMin={3}
+              />
+            )}
             <button
               type="submit"
               className='btn'

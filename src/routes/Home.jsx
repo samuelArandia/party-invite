@@ -75,7 +75,7 @@ function Home() {
         <div>
           <h2>¡ESTAS INVITADO A MI FIESTA DE CUMPLEAÑOS! </h2>
           <h4>Cuándo: El viernes 3 de marzo del 2023</h4>
-          <h4>Dónde:  Las Acacias 7604, La Florida. Salón gourmet</h4>
+          <h4>Dónde:  Las Acacias 7604, La Florida. Departamento 515</h4>
           <h4>Desde las 8:00 pm</h4>
         </div>
         <h4>Por favor confirma tu asistencia</h4>
